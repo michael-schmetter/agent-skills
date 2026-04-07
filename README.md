@@ -2,22 +2,11 @@
 
 **Production-grade engineering skills for AI coding agents.**
 
-Skills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.
-
-```
-  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP
- ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐
- │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │
- │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │
- └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘
-  /spec          /plan          /build        /test         /review       /ship
-```
+> This is a trimmed fork of [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills). Removed: `ship`, `ci-cd-and-automation`, `browser-testing-with-devtools`, `deprecation-and-migration`, `context-engineering`, `using-agent-skills`, `performance-optimization` — to reduce token overhead per session.
 
 ---
 
 ## Commands
-
-7 slash commands that map to the development lifecycle. Each one activates the right skills automatically.
 
 | What you're doing | Command | Key principle |
 |-------------------|---------|---------------|
@@ -27,13 +16,34 @@ Skills encode the workflows, quality gates, and best practices that senior engin
 | Prove it works | `/test` | Tests are proof |
 | Review before merge | `/review` | Improve code health |
 | Simplify the code | `/code-simplify` | Clarity over cleverness |
-| Ship to production | `/ship` | Faster is safer |
 
-Skills also activate automatically based on what you're doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.
+Skills also activate automatically based on what you're doing.
 
 ---
 
-## Quick Start
+## Install into a project
+
+```bash
+# From this repo root — installs skills into .github/ and prints Claude Code launch command
+./install.sh /path/to/your/project
+
+# Or from within your project directory
+/path/to/agent-skills/install.sh
+```
+
+**What it does:**
+- Copies `skills/*/SKILL.md` → `<project>/.github/skills/` (GitHub Copilot coding agent)
+- Copies `agents/*.md` → `<project>/.github/agents/` (Copilot Chat personas)
+- Prints the `--plugin-dir` command for Claude Code
+
+**Claude Code (local plugin):**
+```bash
+claude --plugin-dir /path/to/agent-skills
+```
+
+**GitHub Copilot CLI:** skills are loaded automatically once copied to `.github/skills/`.
+
+---
 
 <details>
 <summary><b>Claude Code (recommended)</b></summary>

@@ -1,40 +1,25 @@
 # agent-skills
 
-This is the agent-skills project — a collection of production-grade engineering skills for AI coding agents.
+Production-grade engineering skills for AI coding agents. This is a trimmed fork of [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — ship/CI/CD/browser-testing skills removed to reduce token overhead.
 
-## Project Structure
-
-```
-skills/       → Core skills (SKILL.md per directory)
-agents/       → Reusable agent personas (code-reviewer, test-engineer, security-auditor)
-hooks/        → Session lifecycle hooks
-.claude/commands/ → Slash commands (/spec, /plan, /build, /test, /review, /code-simplify, /ship)
-references/   → Supplementary checklists (testing, performance, security, accessibility)
-docs/         → Setup guides for different tools
-```
-
-## Skills by Phase
+## Skills
 
 **Define:** spec-driven-development
 **Plan:** planning-and-task-breakdown
-**Build:** incremental-implementation, test-driven-development, context-engineering, frontend-ui-engineering, api-and-interface-design
-**Verify:** browser-testing-with-devtools, debugging-and-error-recovery
-**Review:** code-review-and-quality, code-simplification, security-and-hardening, performance-optimization
-**Ship:** git-workflow-and-versioning, ci-cd-and-automation, deprecation-and-migration, documentation-and-adrs, shipping-and-launch
+**Build:** incremental-implementation, test-driven-development, frontend-ui-engineering, api-and-interface-design
+**Verify:** debugging-and-error-recovery
+**Review:** code-review-and-quality, code-simplification, security-and-hardening
+**Document:** git-workflow-and-versioning, documentation-and-adrs, idea-refine
+
+## Commands
+
+`.claude/commands/`: `/spec` `/plan` `/build` `/test` `/review` `/code-simplify`
 
 ## Conventions
 
 - Every skill lives in `skills/<name>/SKILL.md`
 - YAML frontmatter with `name` and `description` fields
-- Description starts with what the skill does (third person), followed by trigger conditions ("Use when...")
 - Every skill has: Overview, When to Use, Process, Common Rationalizations, Red Flags, Verification
-- References are in `references/`, not inside skill directories
-- Supporting files only created when content exceeds 100 lines
-
-## Commands
-
-- `npm test` — Not applicable (this is a documentation project)
-- Validate: Check that all SKILL.md files have valid YAML frontmatter with name and description
 
 ## Boundaries
 
