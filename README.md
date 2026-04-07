@@ -148,16 +148,6 @@ The commands above are the entry points. Under the hood, they activate these 19 
 | [security-and-hardening](skills/security-and-hardening/SKILL.md) | OWASP Top 10 prevention, auth patterns, secrets management, dependency auditing, three-tier boundary system | Handling user input, auth, data storage, or external integrations |
 | [performance-optimization](skills/performance-optimization/SKILL.md) | Measure-first approach - Core Web Vitals targets, profiling workflows, bundle analysis, anti-pattern detection | Performance requirements exist or you suspect regressions |
 
-### Ship - Deploy with confidence
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [git-workflow-and-versioning](skills/git-workflow-and-versioning/SKILL.md) | Trunk-based development, atomic commits, change sizing (~100 lines), the commit-as-save-point pattern | Making any code change (always) |
-| [ci-cd-and-automation](skills/ci-cd-and-automation/SKILL.md) | Shift Left, Faster is Safer, feature flags, quality gate pipelines, failure feedback loops | Setting up or modifying build and deploy pipelines |
-| [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Code-as-liability mindset, compulsory vs advisory deprecation, migration patterns, zombie code removal | Removing old systems, migrating users, or sunsetting features |
-| [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architecture Decision Records, API docs, inline documentation standards - document the *why* | Making architectural decisions, changing APIs, or shipping features |
-| [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Pre-launch checklists, feature flag lifecycle, staged rollouts, rollback procedures, monitoring setup | Preparing to deploy to production |
-
 ---
 
 ## Agent Personas
@@ -235,11 +225,6 @@ agent-skills/
 │   ├── code-simplification/          #   Review
 │   ├── security-and-hardening/        #   Review
 │   ├── performance-optimization/      #   Review
-│   ├── git-workflow-and-versioning/   #   Ship
-│   ├── ci-cd-and-automation/          #   Ship
-│   ├── deprecation-and-migration/     #   Ship
-│   ├── documentation-and-adrs/        #   Ship
-│   ├── shipping-and-launch/           #   Ship
 │   └── using-agent-skills/            #   Meta: how to use this pack
 ├── agents/                            # 3 specialist personas
 ├── references/                        # 4 supplementary checklists
