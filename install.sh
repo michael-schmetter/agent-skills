@@ -17,6 +17,7 @@ echo "Installing agent-skills into: $PROJECT"
 # GitHub Copilot: copy skills and agents into .github/
 GITHUB_DIR="$PROJECT/.github"
 mkdir -p "$GITHUB_DIR/agents"
+mkdir -p "$PROJECT/.claude/commands"
 
 for skill_dir in "$SKILLS_DIR/skills"/*/; do
   skill_name=$(basename "$skill_dir")
@@ -28,8 +29,13 @@ for agent in "$SKILLS_DIR/agents"/*.md; do
   cp "$agent" "$GITHUB_DIR/agents/"
 done
 
+for cmd in "$SKILLS_DIR/.claude/commands"/*.md; do
+  cp "$cmd" "$PROJECT/.claude/commands/"
+done
+
 echo "  ✓ Copied skills → $GITHUB_DIR/skills/"
 echo "  ✓ Copied agents → $GITHUB_DIR/agents/"
+echo "  ✓ Copied commands → $PROJECT/.claude/commands/"
 
 # Claude Code: add plugin-dir to project settings
 CLAUDE_SETTINGS="$PROJECT/.claude/settings.json"
